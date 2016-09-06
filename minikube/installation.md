@@ -15,15 +15,23 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.9.0/miniku
 ```
 
 #Configure k8s with minikube:
-```
-minikube start
-```
+
+Simply run this:
+>```
+>minikube start
+>```
+>Output:
+>```
+>Starting local Kubernetes cluster...
+>Kubectl is now configured to use the cluster.
+>```
+
 
 See if minikube is configured in kubernetes:
 >```
 >kubectl config view
 >```
->
+>Output
 >```
 >apiVersion: v1
 >clusters:
