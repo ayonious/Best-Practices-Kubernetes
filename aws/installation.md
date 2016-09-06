@@ -73,7 +73,7 @@ fi
 
 configure the master and node things and then bring the cluster up by:
 >```
->./bootstrap-cluster.sh cluster_up
+>./bootstrap-cluster.sh
 >```
 >
 >```
@@ -92,6 +92,6 @@ RUN ALL YOUR KUBERNETES COMMANDS
 
 #Remvoe the cluster:
 ```
-./bootstrap-cluster.sh cluster_down
+./bootstrap-cluster.sh down
 ```
 
