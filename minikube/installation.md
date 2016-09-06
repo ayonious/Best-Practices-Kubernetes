@@ -19,6 +19,33 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.9.0/miniku
 minikube start
 ```
 
+See if minikube is configured in kubernetes:
+>```
+>kubectl config view
+>```
+>
+>```
+>apiVersion: v1
+>clusters:
+>- cluster:
+>    certificate-authority: /Users/<username>/.minikube/ca.crt
+>    server: https://XXXXXXX:XXXX
+>  name: minikube
+>contexts:
+>- context:
+>    cluster: minikube
+>    user: minikube
+>  name: minikube
+>current-context: minikube
+>kind: Config
+>preferences: {}
+>users:
+>- name: minikube
+>  user:
+>    client-certificate: XXXX/.minikube/apiserver.crt
+>    client-key: XXXX/.minikube/apiserver.key
+>```
+
 ################################
 RUN ALL YOUR KUBERNETES COMMANDS
 ################################
@@ -27,6 +54,8 @@ RUN ALL YOUR KUBERNETES COMMANDS
 ```
 minikube service hello-minikube --url
 ```
+
+
 
 #Remvoe the cluster:
 ```
