@@ -2,3 +2,9 @@
 *.DS_Store
 **/.DS_Store
 
+# For vim
+#Vim temporary files end with ~
+*~
+#Vim creates swap files that have the swp and swo extensions
+*.swp
+*.swo
