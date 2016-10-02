@@ -11,6 +11,8 @@ In this project we are going to leart how to use Kubernetes (k8s) and creating t
 `Commonfiles` contains all the common installation instructions for installing k8s in your local pc
 
 It also contains instructions for creating the cluster in these:
-1. aws
-2. appscode
-3. minikube
+
+	1. aws
+	2. appscode
+	3. minikube
+
