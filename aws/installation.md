@@ -82,12 +82,59 @@ configure the master and node things and then bring the cluster up by:
 >... calling kube-up
 >Starting cluster using os distro: vivid
 >Uploading to Amazon S3
+>........................
+>........................
 >```
 
 
-################################
+If you have saved docker containers in EC2 container service then to download them you have to create "secrets"
+the secrets yaml file(aws.yaml) should look like this
+```
+apiVersion: v1     
+kind: Secret
+metadata:
+  name: mykey
+data:
+  .dockerconfigjson: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+type: kubernetes.io/dockerconfigjson
+```
+
+Create the key in docker config file: *********(CAREFUL this key will experire in 12 hours)
+```
+aws ecr get-login --region=XX-XXXX-X
+```
+
+Find the `.dockerconfigjson` like this:
+```
+# MACOS
+cat ~/.docker/config.json | base64
+# Linux
+cat ~/.docker/config.json | base64 -wO
+```
+
+And the pod.yaml could look like this (using this secret to pull images from aws):
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: yo
+  namespace: cool
+spec:
+  containers:
+    - name: yo
+      image: XXX/XXX:XXX
+  imagePullSecrets:
+    - name: mykey
+```
+
+see more about this here: http://kubernetes.io/docs/user-guide/images/
+
+
+
+#######################################################################
 RUN ALL YOUR KUBERNETES COMMANDS
-################################
+see kubernetes/kubernetes.md to see what you can actually do about this
+#######################################################################
 
 
 #Remvoe the cluster:
