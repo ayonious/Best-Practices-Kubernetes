@@ -1,10 +1,12 @@
 #Minikube practice
 
 ##Prereq
-Install kubernetes from commonfiles/installation.md
+Install kubernetes from kubernetes/installation.md
 
 ##Installation
 For latest version installation see: https://github.com/kubernetes/minikube/releases
+
+
 
 ```
 #OSX (version 0.9.0)
