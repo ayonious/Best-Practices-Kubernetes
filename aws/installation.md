@@ -37,10 +37,10 @@ Default output format [None]: you can just enter here, enter will keep the defau
 
 ## 4. Configure Kubernetes to use AWS cloud (make sure you put proper version numbers)
 
-First create a directory suppose 'myproject'. Now download v1.3.4 careful about this 1.3.5,1.3.6 has problems with aws kube-up.sh
+First create a directory suppose 'myproject'. Now download v1.4.0(my version) careful about this 1.3.5,1.3.6 has problems with aws kube-up.sh
 ```
 cd myproject
-export K8S_VERSION=v1.3.4; curl -SLO https://github.com/kubernetes/kubernetes/releases/download/$K8S_VERSION/kubernetes.tar.gz
+export K8S_VERSION=v1.4.0; curl -SLO https://github.com/kubernetes/kubernetes/releases/download/$K8S_VERSION/kubernetes.tar.gz
 tar xzvf kubernetes.tar.gz
 vi bootstrap-cluster.sh
 ```

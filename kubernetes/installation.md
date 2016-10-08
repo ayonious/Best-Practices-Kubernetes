@@ -9,11 +9,6 @@ My output is something like this
 machdep.cpu.features: XXX XXX XXX XXXXX XXXX XXXX XXXXXX XXX XXX XXXXX XXXX XXXX XXXXXX XXX XXX XXXXX XXXX XXXX XXXXXX XXX XXX XXXXX XXXX XXXX XXXXXX XXX XXX XXXXX XXXX XXXX XXX
 ```
 
-Now install Kubernetes (make sure to install the latest version, here were going to install v1.3.6):
-```
-curl -Lo kubectl http://storage.googleapis.com/kubernetes-release/release/v1.3.6/bin/darwin/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
-```
-
 For Mac installing the latest version:
 ```
 brew install kubernetes-cli
