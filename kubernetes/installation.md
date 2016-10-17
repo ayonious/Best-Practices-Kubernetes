@@ -1,27 +1,37 @@
 #Kubernetes Installation
 
-Check that your system supports VT-x/AMD-v virtualization by running this command:
+
+## Official way to installing kubernetes:
+===============================================
+Find the latest version here:
 ```
-sysctl -a | grep machdep.cpu.features | grep VMX
+https://github.com/kubernetes/kubernetes/releases
 ```
-My output is something like this
+just download it, extract it, inside goto platforms folder and find peoper version for your usage. This is a prebuild release so you can simply add in in someplace and start using it.
+
 ```
-machdep.cpu.features: XXX XXX XXX XXXXX XXXX XXXX XXXXXX XXX XXX XXXXX XXXX XXXX XXXXXX XXX XXX XXXXX XXXX XXXX XXXXXX XXX XXX XXXXX XXXX XXXX XXXXXX XXX XXX XXXXX XXXX XXXX XXX
+cd platforms/darwin/amd64
+chmod +x kubectl
+cp kubectl /usr/local/bin/kubectl
+kubectl version
 ```
 
+
+## Another way of installing kubernetes:
+=========================================
 For Mac installing the latest version:
 ```
 brew install kubernetes-cli
 ```
 
-if the above command fails because of previous installation you might need to run this to overrite with this installation
+If the above command fails because of previous installation you might need to run this to overrite with this installation
 ```
 brew link --overwrite kubernetes-cli
 ```
-
 
 Check that kubectl is properly configured by getting the cluster state:
 ```
 kubectl cluster-info
 ```
 If you see a url response, you are ready to go.
+
