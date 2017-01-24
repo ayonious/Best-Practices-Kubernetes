@@ -7,7 +7,10 @@ Find the latest version here:
 ```
 https://github.com/kubernetes/kubernetes/releases
 ```
-just download it, extract it, inside goto platforms folder and find peoper version for your usage. This is a prebuild release so you can simply add in in someplace and start using it.
+
+Then goto changelog and find the proper client version for me its `darwin 64amd`
+
+just download it, extract it
 
 ```
 cd platforms/darwin/amd64
