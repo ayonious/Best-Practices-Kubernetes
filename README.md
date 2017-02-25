@@ -16,3 +16,63 @@ It also contains instructions for creating the cluster in these:
 	2. appscode
 	3. minikube
 
+
+# Synopsys
+
+## Official way to installing kubernetes:
+===============================================
+Find the latest version here:
+```
+https://github.com/kubernetes/kubernetes/releases
+```
+
+Then goto changelog and find the proper client version for me its `darwin 64amd` just download it, extract it
+```
+cd platforms/darwin/amd64
+chmod +x kubectl
+cp kubectl /usr/local/bin/kubectl
+kubectl version
+```
+
+
+## Another way of installing kubernetes:
+=========================================
+For Mac installing the latest version:
+```
+brew install kubernetes-cli
+```
+
+If the above command fails because of previous installation you might need to run this to overrite with this installation
+```
+brew link --overwrite kubernetes-cli
+```
+
+To Check that kubectl is properly configured(and remote cluster is reachable) by getting the cluster state:
+```
+kubectl cluster-info
+```
+If you see a url response, you are ready to go.
+
+
+
+## Cheatsheet
+```
+kubectl get version
+
+kubectl get nodes
+kubectl get pods
+kubectl get secrets
+kubectl get services
+kubectl create -f <file>
+kubectl get namespaces
+kubectl logs <pod-name> 
+kubectl port-forward <pod-name> <local-port>:<remote-port>
+
+kubectl delete pods --all
+
+kubectl exec <pod-name> -- ls /                         # Run command in existing pod (1 container case)
+kubectl exec <pod-name> -c <container-name> -- ls /     # Run command in existing pod (multi-container case)
+
+kubectl config view
+kubectl cluster-info
+```
