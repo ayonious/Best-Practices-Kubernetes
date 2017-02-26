@@ -1,23 +1,33 @@
-# Minikube practice project
+# Minikube practice project2
+
+
+## Run using python script
+```
+#console1
+cd receiverContainer
+python script.py "localhost" "5555"
+
+#console2
+cd senderContainer
+python script.py "localhost" "5555"
+```
+
+## Run using docker run
+```
+#console1
+cd receiverContainer
+docker build -t docker.io/ayonnayihan/sample-sendr-rcv-test:receiver0.1 .
+
+docker run --name="testListen" -p 5555:5555 --env LISTEN_HOST="localhost" --env LISTEN_PORT="5555" docker.io/ayonnayihan/sample-sendr-rcv-test:receiver0.1
+
+
+#console2
+cd senderContainer
+docker build -t docker.io/ayonnayihan/sample-sendr-rcv-test:sender0.1 .
+
+docker run --name="testTalk" --env SEND_HOST="localhost" --env SEND_PORT="5555" docker.io/ayonnayihan/sample-sendr-rcv-test:sender0.1
+```
 
 
 
-### Build the image:
-	docker build -t docker.io/ayonnayihan/sample-image-test:0.12 .
-### See list of images built and see that youre image is there
-	docker images
-### Push the images to dockerhub (hope you have permission only I can push and I have already done that so you can just download and use from anywhere)
-```
-	# to get push permission `docker login`
-	docker push docker.io/ayonnayihan/sample-image-test:0.12 
-```
-### now create the rc and monitor it
-```
-	kubectl create -f ayonAppServer-rc.yaml
-	kubectl get pods
-	kubectl get rc
-	kubectl cluster-info
-	kubectl describe pods <pod-id>
-	kubectl logs <pod-id>
-```
 

@@ -8,5 +8,3 @@ RUN \
 ADD script.py /root/script.py
 
 CMD python -u /root/script.py $LISTEN_HOST $LISTEN_PORT
-
-EXPOSE 5555

@@ -1,0 +1,14 @@
+version: '2'
+services:
+  sender:
+    image: docker.io/ayonnayihan/sample-sendr-rcv-test:sender0.1
+    # build: sender
+    environment:
+      SEND_HOST: receiver
+      SEND_PORT: 5555
+  receiver:
+    image: docker.io/ayonnayihan/sample-sendr-rcv-test:receiver0.1
+    # build: receiver
+    environment:
+      LISTEN_HOST: '0.0.0.0'
+      LISTEN_PORT: 5555

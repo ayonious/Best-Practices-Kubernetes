@@ -8,4 +8,3 @@ RUN \
 ADD script.py /root/script.py
 
 CMD python -u /root/script.py $SEND_HOST $SEND_PORT
-
