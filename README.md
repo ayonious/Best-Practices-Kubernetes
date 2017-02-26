@@ -55,6 +55,20 @@ If you see a url response, you are ready to go.
 
 
 
+	
+## Creating your docker hub
+
+You need a docker hub in case you are thinking about having some free docker images on which you can test you local kubernetes cluster. In the examples used here I have pushed the images in my private docker repo, and the repo is public so anyone can pull but only I can push.
+
+
+## How to create your own docker hub
+
+	1. Register here: `https://cloud.docker.com`
+	2. Create a new repository where you can push the images
+	3. `docker login` use your credentials to login and then push everything
+	4. now I can push stuffs using `docker push docker.io/ayonnayihan/sample-image-test:0.1`
+
+
 ## Cheatsheet
 ```
 kubectl get version

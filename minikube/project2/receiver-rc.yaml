@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: receiver
+spec:
+  replicas: 1
+  selector:
+    app: receiver
+  template:
+    metadata:
+      name: receiver.com
+      labels:
+        app: receiver
+    spec:
+      containers:
+      - name: test-k8s-app-rcvr
+        image: docker.io/ayonnayihan/sample-sendr-rcv-test:receiver0.1
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1024Mi
+        ports:
+        - name: rcvrport
+          containerPort: 5555
+        env:
+        - name: LISTEN_HOST
+          value: receiver-service
+        - name: LISTEN_PORT
+          value: "5555"

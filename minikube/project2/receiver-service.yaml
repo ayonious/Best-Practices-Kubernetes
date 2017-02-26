@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: receiver-service
+spec:
+  selector:
+    app: receiver-service
+  ports:
+    - name: receiver-service
+      protocol: TCP
+      port: 5555
+      targetPort: 5555

@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: example
+spec:
+  replicas: 1
+  selector:
+    app: ayonAppserver
+  template:
+    metadata:
+      name: example.com
+      labels:
+        app: ayonAppserver
+    spec:
+      containers:
+      - name: test-k8s-app
+        image: docker.io/ayonnayihan/sample-image-test:0.12
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1024Mi
+
+
+

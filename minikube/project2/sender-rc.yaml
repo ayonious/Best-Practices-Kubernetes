@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: sender
+spec:
+  replicas: 1
+  selector:
+    app: sender
+  template:
+    metadata:
+      name: sender.com
+      labels:
+        app: sender
+    spec:
+      containers:
+      - name: test-k8s-app-sendr
+        image: docker.io/ayonnayihan/sample-sendr-rcv-test:sender0.1
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1024Mi
+        ports:
+        - name: senderport
+          containerPort: 5555
+        env:
+        - name: SEND_HOST
+          value: receiver-service
+        - name: SEND_PORT
+          value: 5555
