@@ -86,6 +86,10 @@ configure the master and node things and then bring the cluster up by:
 >........................
 >```
 
+If you are getting error like binary missing and someone is asking you to run 
+  ./kubernetes/cluster/get-kube-binaries.sh
+Then run just it and then copy the kubectl file to the proper path to make the run successful
+
 
 If you have saved docker containers in EC2 container service then to download them you have to create "secrets"
 the secrets yaml file(aws.yaml) should look like this
