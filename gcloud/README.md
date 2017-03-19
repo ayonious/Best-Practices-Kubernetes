@@ -1,5 +1,7 @@
 ## Install gcloud
+```
 curl https://sdk.cloud.google.com | bash
+```
 
 In case the installation didn’t work out:
 This will download cloud and put in somewhere in ~/ folder
