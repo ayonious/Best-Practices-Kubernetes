@@ -12,10 +12,11 @@ In this project we are going to leart how to use Kubernetes (k8s) and creating t
 
 It also contains instructions for creating the cluster in these:
 
-	1. aws
-	2. appscode
+	1. gcloud
+	2. aws
 	3. minikube
-
+	4. appscode
+	
 
 # Synopsys
 
@@ -34,25 +35,11 @@ cp kubectl /usr/local/bin/kubectl
 kubectl version
 ```
 
-
-## Another way of installing kubernetes:
-=========================================
-For Mac installing the latest version:
-```
-brew install kubernetes-cli
-```
-
-If the above command fails because of previous installation you might need to run this to overrite with this installation
-```
-brew link --overwrite kubernetes-cli
-```
-
 To Check that kubectl is properly configured(and remote cluster is reachable) by getting the cluster state:
 ```
 kubectl cluster-info
 ```
 If you see a url response, you are ready to go.
-
 
 
 	
