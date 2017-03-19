@@ -1,4 +1,4 @@
-#Kubernetes
+# Kubernetes
 
 Kubernetes (commonly referred to as "k8s") is an open source container cluster manager originally designed by Google and donated to the Cloud Native Computing Foundation. It aims to provide a "platform for automating deployment, scaling, and operations of application containers across clusters of hosts".
 
