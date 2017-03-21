@@ -21,7 +21,6 @@ It also contains instructions for creating the cluster in these:
 # Synopsys
 
 ## Installing kubernetes:
-===============================================
 Find the latest version here:
 ```
 https://github.com/kubernetes/kubernetes/releases
